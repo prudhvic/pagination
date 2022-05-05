@@ -50,6 +50,7 @@ const Dhoni = () => {
         <div className="nums">
           {[...new Array(data?.total).fill(1)].map((num, index) => (
             <button
+              key={index}
               className={page == index ? "active" : ""}
               onClick={() => setPage(index)}
             >

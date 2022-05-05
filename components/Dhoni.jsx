@@ -10,7 +10,7 @@ import {
 const Dhoni = () => {
   let [page, setPage] = useState(0);
   let { data, isLoading, error } = useFetch(
-    `http://localhost:3000/pics?page=${page}`
+    `https://paginationv1.herokuapp.com/pics?page=${page}`
   );
   let [pics, setPics] = useState([]);
   if (isLoading) {

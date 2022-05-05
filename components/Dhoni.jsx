@@ -69,7 +69,7 @@ const Dhoni = () => {
       >
         {data?.pics?.map((pic) => {
           return (
-            <div>
+            <div key={pic._id}>
               <Image
                 width={200}
                 alt={pic.caption}

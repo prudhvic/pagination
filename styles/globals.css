@@ -1,16 +1,129 @@
-html,
-body {
+* {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
   box-sizing: border-box;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+.container {
+  margin: 0 auto;
+  padding: 1rem;
+  height: 100%;
+  display: grid;
+  gap: 1em;
+  overflow: hidden;
+}
+.pics {
+  display: grid;
+  padding: 0.5em;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+.pics > * {
+  background-color: white;
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+p {
+  font-size: 0.8rem;
+  padding: 10px;
+  font-weight: 300;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: max-content;
+}
+.buttons button {
+  padding: 0.4em 0.8em;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+
+  border: none;
+  background-color: #333;
+}
+.buttons > button {
+  color: black;
+  background-color: transparent;
+  font-size: 1.7rem;
+}
+.nums {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button.active {
+  color: #333;
+  background-color: aliceblue;
+  border: 1px solid #333;
+}
+
+.continuous-4 {
+  width: 120px;
+  height: 22px;
+  border-radius: 40px;
+  color: #514b82;
+  border: 2px solid;
+
+  position: relative;
+  overflow: hidden;
+}
+.flex {
+  display: grid;
+  place-content: center;
+  height: 80vh;
+}
+.error {
+  font-size: 2rem;
+  color: darkred;
+  text-align: center;
+}
+.continuous-4::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  width: 14px;
+  top: 0;
+  bottom: 0;
+  left: -20px;
+  border-radius: inherit;
+  background: currentColor;
+  box-shadow: -10px 0 12px 3px currentColor;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%, -30px 50%);
+  animation: ct4 1s infinite linear;
+}
+
+@keyframes ct4 {
+  100% {
+    left: calc(100% + 20px);
+  }
+}
+@media (max-width: 800px) {
+  .nums button {
+    font-size: 0.6rem;
+  }
+  .buttons > button {
+    font-size: 1.4rem;
+  }
+  .pics img {
+    max-width: 270px;
+  }
 }
